@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000) //3 másodperc delay hogy megynitja a main activityt
+        }, 5000) //3 másodperc delay hogy megynitja a main activityt
 
 
 
