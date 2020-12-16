@@ -29,11 +29,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.getPost()
         viewModel.myResponse.observe(this, Observer { response ->
             if(response.isSuccessful){
-                Log.d("Response",response.body()?.userId.toString())
                 Log.d("Response",response.body()?.cities.toString())
                 //Log.d("Response",response.body()?.restaurant.toString())
                 //textView.text = response.body().cities!!
-                Log.d("Response",response.body()?.restaurants.toString()!!)
+                Log.d("Response",response.body()?.restaurants.toString() )
             }
             else{
                 Log.d("Response",response.errorBody().toString())
