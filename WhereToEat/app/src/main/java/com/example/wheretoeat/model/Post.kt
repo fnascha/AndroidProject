@@ -1,10 +1,9 @@
 package com.example.wheretoeat.model
 
+import com.example.wheretoeat.api.utils.Restaurants
 import com.google.gson.annotations.SerializedName
 
 data class Post (
-        val userId: Int,
-        val cities: String,
-        val restaurants: String
-
+        val restaurants: List<Restaurants>,
+        val cities : Array<String>
         )
