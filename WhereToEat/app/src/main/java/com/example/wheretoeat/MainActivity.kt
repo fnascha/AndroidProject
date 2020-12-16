@@ -28,9 +28,17 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel :: class.java)
         viewModel.getPost()
         viewModel.myResponse.observe(this, Observer { response ->
-            Log.d("Response",response.userId.toString())
-           //Log.d("Response",response.id.toString())
-            //Log.d("Response",response.restaurant.toString())
+            if(response.isSuccessful){
+                Log.d("Response",response.body()?.userId.toString())
+                Log.d("Response",response.body()?.cities.toString())
+                //Log.d("Response",response.body()?.restaurant.toString())
+                //textView.text = response.body().cities!!
+                Log.d("Response",response.body()?.restaurants.toString()!!)
+            }
+            else{
+                Log.d("Response",response.errorBody().toString())
+                //textView.text = response.code().toString()
+            }
 
 
         })
