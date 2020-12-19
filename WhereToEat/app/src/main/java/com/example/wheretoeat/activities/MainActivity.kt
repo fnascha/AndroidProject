@@ -1,4 +1,4 @@
-package com.example.wheretoeat
+package com.example.wheretoeat.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.wheretoeat.R
 import com.example.wheretoeat.databinding.ActivityMainBinding
+import com.example.wheretoeat.fragments.DetailsFragment
+import com.example.wheretoeat.fragments.MainFragment
+import com.example.wheretoeat.fragments.ProfileFragment
 import com.example.wheretoeat.repository.Repository
+import com.example.wheretoeat.viewmodel.MainViewModel
+import com.example.wheretoeat.viewmodel.MainViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel :: class.java)
         viewModel.getPost()
-        viewModel.myResponse.observe(this, Observer { response ->
+        viewModel.myResponseRest.observe(this, Observer { response ->
             if(response.isSuccessful){
                 Log.d("Response",response.body()?.cities.toString())
                 //Log.d("Response",response.body()?.restaurant.toString())
@@ -42,14 +48,17 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+
+
         bottomNav.setOnNavigationItemSelectedListener(navListener)
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().replace(
-                R.id.fragment_container,
+                    R.id.fragment_container,
                 MainFragment()
             ).commit()
         }
+
     }
 
     private val navListener =
@@ -58,11 +67,11 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> selectedFragment = MainFragment()
                 R.id.nav_profile -> selectedFragment = ProfileFragment()
-                R.id.nav_detailscreen -> selectedFragment =DetailsFragment()
+                R.id.nav_detailscreen -> selectedFragment = DetailsFragment()
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container,
+                        R.id.fragment_container,
                     selectedFragment
                 ).commit()
             }

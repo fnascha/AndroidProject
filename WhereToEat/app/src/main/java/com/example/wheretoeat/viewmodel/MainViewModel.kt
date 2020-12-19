@@ -1,4 +1,4 @@
-package com.example.wheretoeat
+package com.example.wheretoeat.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +11,7 @@ import retrofit2.Response
 class MainViewModel(private val repository: Repository): ViewModel() {
 
     val myResponse: MutableLiveData<Response<Post>> = MutableLiveData()
+    val myResponseRest: MutableLiveData<Response<Post>> = MutableLiveData()
 
 
     fun getPost()
@@ -22,5 +23,11 @@ class MainViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
+    fun getPostRest(nameRest: String){
+            viewModelScope.launch {
+                val response = repository.getPostRest(nameRest)
+                myResponseRest.value = response
+            }
 
+    }
 }

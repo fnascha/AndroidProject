@@ -1,9 +1,10 @@
-package com.example.wheretoeat
+package com.example.wheretoeat.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.wheretoeat.R
 
 @Suppress("DEPRECATION")
 class SplashScreenActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
         handler = Handler()
         handler.postDelayed({
 
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, 5000) //5 másodperc delay hogy megynitja a main activityt

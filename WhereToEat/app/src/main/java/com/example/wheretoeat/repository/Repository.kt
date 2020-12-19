@@ -10,5 +10,8 @@ class Repository {
         return RetrofitInstance.api.getPost()
     }
 
+    suspend fun getPostRest(nameRest: String): Response<Post>{
+        return RetrofitInstance.api.getPostRest(nameRest)
+    }
 
 }
