@@ -22,9 +22,9 @@ private val myAdapter by lazy{MyAdapter()}
 class MainFragment : Fragment() {
     @Nullable
     override fun onCreateView(
-        inflater: LayoutInflater,
-        @Nullable container: ViewGroup?,
-        @Nullable savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            @Nullable container: ViewGroup?,
+            @Nullable savedInstanceState: Bundle?
     ): View {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
@@ -32,28 +32,27 @@ class MainFragment : Fragment() {
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel :: class.java)
 
         /*
-        viewModel.myCustomPosts.observe(viewLifecycleOwner, Observer { response ->
-            if(response.isSuccessful){
-                //myAdapter.setData()
+
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+        viewModel.myCustomPosts2.observe(viewLifecycleOwner, Observer { response ->
+            if (response.isSuccessful) {
+                myAdapter.setData()
             }
 
         })
 
-
+        */
+        return view
 
     }
 
-    private fun setupRecycleView(){
-        recyclerView.adapter=myAdapter
-       // recyclerView.layoutManager = LinearLayoutManager(this)
+    private fun setupRecycleView() {
+        recyclerView.adapter = myAdapter
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.setHasFixedSize(true)
 
 
-
-*/      return view
     }
-
-
 }

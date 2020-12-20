@@ -10,9 +10,6 @@ import kotlinx.android.synthetic.main.row_layout.view.*
 import com.example.wheretoeat.model.Restaurants
 
 
-
-
-
 class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private var myList = emptyList<Restaurants>()
@@ -38,12 +35,12 @@ class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
             holder.itemView.RestaurantPhone_txt.text = myList[position].phoneRes
     }
 
-    /*
+
     fun setData() {
-        myList = newList
+        myList = mutableListOf()
         notifyDataSetChanged()
     }
-*/
+
 
 
 
