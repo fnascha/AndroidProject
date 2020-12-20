@@ -1,38 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    
+    <ImageView
+        android:id="@+id/imageView_ProfilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="avatars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
 
-        <ImageView
-            android:id="@+id/profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/textView_firstName"
+        android:layout_width="179dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="First Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_ProfilePic"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            />
+    <TextView
+        android:id="@+id/textView_lastName"
+        android:layout_width="179dp"
+        android:layout_height="28dp"
 
-        <TextView
-            android:id="@+id/name_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_ProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/textView_firstName" />
 
+    <TextView
+        android:id="@+id/textView_email"
+        android:layout_width="337dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_lastName" />
 
+    <TextView
+        android:id="@+id/textView_address"
+        android:layout_width="337dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_email" />
 
+    <Button
+        android:id="@+id/button_logOut"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:text="Log Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
 
-        <TextView
-            android:id="@+id/email_cim"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
-
-
-</RelativeLayout>
-
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

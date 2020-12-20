@@ -6,12 +6,13 @@ import retrofit2.Response
 
 class Repository {
 
-    suspend fun  getPost(): Response<Post> {
+    suspend fun getPost(): Response<Post> {
         return RetrofitInstance.api.getPost()
     }
 
-    suspend fun getPostRest(nameRest: String): Response<Post>{
-        return RetrofitInstance.api.getPostRest(nameRest)
+    suspend fun getPostRest(nameCity: String): Response<Post> {
+        return RetrofitInstance.api.getPostRest(nameCity)
     }
+
 
 }

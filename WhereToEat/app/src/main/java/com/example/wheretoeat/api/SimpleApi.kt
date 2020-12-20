@@ -4,6 +4,7 @@ import com.example.wheretoeat.model.Post
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 interface SimpleApi {
@@ -11,9 +12,9 @@ interface SimpleApi {
     @GET("/cities")
     suspend fun getPost(): Response<Post>
 
-    @GET("/cities/{postName}")
+    @GET("/restaurants/{postName}")
     suspend fun getPostRest(
-        @Path("postName") nameRest: String
-
+        @Query("city") city: String
     ):Response<Post>
+
 }
