@@ -28,12 +28,13 @@ class MainFragment : Fragment() {
     ): View {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
-        setupRecycleView()
+        //setupRecycleView()
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel :: class.java)
 
+        /*
         viewModel.myCustomPosts.observe(viewLifecycleOwner, Observer { response ->
             if(response.isSuccessful){
                 //myAdapter.setData()
@@ -42,17 +43,17 @@ class MainFragment : Fragment() {
         })
 
 
-        return view
-    }
 
+    }
 
     private fun setupRecycleView(){
         recyclerView.adapter=myAdapter
        // recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
+*/      return view
     }
-
-
 
 
 }
