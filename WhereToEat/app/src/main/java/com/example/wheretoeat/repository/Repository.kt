@@ -14,5 +14,9 @@ class Repository {
         return RetrofitInstance.api.getPostRest(nameCity)
     }
 
+    suspend fun getPostRest2(  nameRes: String, city: String,  addressRes: String,phoneRes: String): Response<List<Post>> {
+        return RetrofitInstance.api.getPostRest2(nameRes,city,addressRes,phoneRes)
+    }
+
 
 }

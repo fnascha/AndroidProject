@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
 
-
+/*
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel :: class.java)
         viewModel.getPost()
         viewModel.myResponseRest.observe(this, Observer { response ->
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
 
         })
-
+*/
 
         bottomNav.setOnNavigationItemSelectedListener(navListener)
         //I added this if statement to keep the selected fragment when rotating the device

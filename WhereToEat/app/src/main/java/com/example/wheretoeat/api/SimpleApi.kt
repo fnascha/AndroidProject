@@ -17,4 +17,13 @@ interface SimpleApi {
         @Query("city") city: String
     ):Response<Post>
 
+
+    @GET("/restaurants/{postName}")
+    suspend fun getPostRest2(
+        @Query("nameRes") nameRes: String,
+        @Query("city") city: String,
+        @Query("addressRes") addressRes: String,
+        @Query("phoneRes") phoneRes: String
+    ):Response<List<Post>>
+
 }
