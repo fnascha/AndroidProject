@@ -19,67 +19,72 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/textView_Name"
+    <EditText
+        android:id="@+id/editText_Name"
         android:layout_width="179dp"
-        android:layout_height="28dp"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView_ProfilePic"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_Email"
+    <EditText
+        android:id="@+id/editText_Email"
         android:layout_width="179dp"
-        android:layout_height="28dp"
+        android:layout_height="40dp"
 
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:text="Email"
+        android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView_ProfilePic"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Name" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_Name" />
 
-    <TextView
-        android:id="@+id/textView_Phone"
+    <EditText
+        android:id="@+id/editText_Phone"
+        android:layout_width="179dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Phone Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_ProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Email" />
+
+    <EditText
+        android:id="@+id/editText_Password"
         android:layout_width="337dp"
-        android:layout_height="20dp"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="Phone Number"
+        android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_Phone" />
+
 
 
     <Button
-        android:id="@+id/button_logIn"
+        android:id="@+id/button_submit_Profile_edit"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="65dp"
-        android:text="Log In"
+        android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
-
-    <Button
-        android:id="@+id/button_Profile_Edit"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Edit Profile"
-        app:layout_constraintBottom_toTopOf="@+id/button_logIn"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp" />
 

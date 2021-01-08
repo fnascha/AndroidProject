@@ -1,8 +1,11 @@
 package com.example.wheretoeat.repository
 
 import com.example.wheretoeat.api.utils.RetrofitInstance
+import com.example.wheretoeat.model.ApiResponse
 import com.example.wheretoeat.model.Post
+import com.example.wheretoeat.model.Restaurants
 import retrofit2.Response
+
 
 class Repository {
 
@@ -14,8 +17,8 @@ class Repository {
         return RetrofitInstance.api.getPostRest(nameCity)
     }
 
-    suspend fun getPostRest2(  nameRes: String, city: String,  addressRes: String,phoneRes: String): Response<List<Post>> {
-        return RetrofitInstance.api.getPostRest2(nameRes,city,addressRes,phoneRes)
+    suspend fun getPostRest2(options: Map<String, String>): Response<ApiResponse> {
+        return RetrofitInstance.api.getPostRest2(options)
     }
 
 

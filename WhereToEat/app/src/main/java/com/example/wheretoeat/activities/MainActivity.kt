@@ -9,9 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.wheretoeat.R
 import com.example.wheretoeat.databinding.ActivityMainBinding
-import com.example.wheretoeat.fragments.DetailsFragment
-import com.example.wheretoeat.fragments.MainFragment
-import com.example.wheretoeat.fragments.ProfileFragment
+import com.example.wheretoeat.fragments.*
 import com.example.wheretoeat.repository.Repository
 import com.example.wheretoeat.viewmodel.MainViewModel
 import com.example.wheretoeat.viewmodel.MainViewModelFactory
@@ -20,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: MainViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> selectedFragment = MainFragment()
                 R.id.nav_profile -> selectedFragment = ProfileFragment()
-                R.id.nav_detailscreen -> selectedFragment = DetailsFragment()
+                R.id.nav_detailscreen -> selectedFragment = LogInFragment()
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction().replace(

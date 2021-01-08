@@ -1,29 +1,33 @@
 package com.example.wheretoeat.api
 
+import com.example.wheretoeat.model.ApiResponse
 import com.example.wheretoeat.model.Post
+import com.example.wheretoeat.model.Restaurants
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.QueryMap
 
 
 interface SimpleApi {
 
-    @GET("/cities")
+
+    @GET("cities")
     suspend fun getPost(): Response<Post>
 
-    @GET("/restaurants/{postName}")
+    @GET("restaurants/{postName}")
     suspend fun getPostRest(
         @Query("city") city: String
     ):Response<Post>
 
 
-    @GET("/restaurants/{postName}")
+
+    @GET("restaurants")
     suspend fun getPostRest2(
-        @Query("nameRes") nameRes: String,
-        @Query("city") city: String,
-        @Query("addressRes") addressRes: String,
-        @Query("phoneRes") phoneRes: String
-    ):Response<List<Post>>
+            @QueryMap options: Map<String, String>
+    ):Response<ApiResponse>
+
+
+
 
 }

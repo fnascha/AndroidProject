@@ -1,6 +1,17 @@
 package com.example.wheretoeat.model
 
-class Restaurants (
+
+
+data class ApiResponse (
+        val total_entries: Int,
+        val per_page: Int,
+        val current_page: Int,
+        val restaurants: List<Restaurants>
+)
+
+
+
+class Restaurants(
     val id: Int,
     val nameRes: String,
     val addressRes: String,
@@ -15,5 +26,5 @@ class Restaurants (
     val price: Int,
     val reserve_url: String,
     val mobile_reserve_url: String,
-    val image_url: String,
+    val image_url: String
 )

@@ -3,21 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/profileFragment"
+    android:name="androidx.navigation.fragment.NavHostFragment">
 
-    <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.example.wheretoeat.fragments.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.wheretoeat.fragments.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.wheretoeat.fragments.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment2"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.wheretoeat.fragments.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.wheretoeat.fragments.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>
