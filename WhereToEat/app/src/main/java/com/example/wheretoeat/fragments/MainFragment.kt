@@ -68,7 +68,7 @@ class MainFragment : Fragment() {
             options["city"] = view.findViewById<EditText>(R.id.city_name).text.toString()
 
             viewModel.getPostRest2(options)
-            viewModel.myResponseRest2.observe(viewLifecycleOwner, Observer { response ->
+            viewModel.myResponseRest2.observe(viewLifecycleOwner, Observer{ response ->
                 if (response.isSuccessful) {
                     response.body()?.let { myAdapter.setData(it.restaurants) }
                     //Log.d("rest", response.body()?.restaurants!!.size.toString())
@@ -86,7 +86,7 @@ class MainFragment : Fragment() {
 
     private fun setupRecycleView() {
         recyclerView.adapter = myAdapter
-        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
     }
 }

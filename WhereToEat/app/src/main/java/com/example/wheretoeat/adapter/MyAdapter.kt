@@ -1,4 +1,5 @@
 package com.example.wheretoeat.adapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,15 +17,19 @@ class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     private var myList = emptyList<Restaurants>()
 
     inner class MyViewHolder(itemView: View) :  RecyclerView.ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById(R.id.RestaurantPic)
+        val RestaurantsImage: ImageView = itemView.findViewById(R.id.RestaurantPic)
+        val RestaurantsName: TextView = itemView.findViewById(R.id.RestaurantName_txt)
+        val CityName: TextView = itemView.findViewById(R.id.CityName_txt)
+        val RestaurantAddress: TextView = itemView.findViewById(R.id.RestaurantAddress_txt)
+        val RestaurantPhone: TextView = itemView.findViewById(R.id.RestaurantPhone_txt)
+
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view =  MyViewHolder(LayoutInflater.from(parent.context).inflate(row_layout, parent, false))
-
-
-        return view
+        val itemView =
+                LayoutInflater.from(parent.context).inflate(R.layout.row_layout, parent, false)
+        return MyViewHolder(itemView)
 
     }
 
@@ -34,10 +39,13 @@ class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-            holder.itemView.RestaurantName_txt.text = myList[position].nameRes
-            holder.itemView.CityName_txt.text = myList[position].city
-            holder.itemView.RestaurantAddress_txt.text = myList[position].addressRes
-            holder.itemView.RestaurantPhone_txt.text = myList[position].phoneRes
+        //Log.d("adapt","resName:$myList[position].nameRes")
+            holder.RestaurantsName.text = myList[position].nameRes
+            holder.CityName.text = myList[position].city
+        //Log.d("adapt","addressRes:$myList[position].addressRes")
+            holder.RestaurantAddress.text = myList[position].addressRes
+        //Log.d("adapt","phoneRes:$myList[position].phoneRes")
+            holder.RestaurantPhone.text = myList[position].phoneRes
 
         Glide.with(holder.itemView.context)
                 .load(myList[position].image_url.toString())
@@ -45,10 +53,7 @@ class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
                 .error(R.drawable.logo)
                 .override(400, 400)
                 .centerCrop()
-                .into(holder.image)
-
-
-
+                .into(holder.RestaurantsImage)
 
     }
 
@@ -56,9 +61,6 @@ class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
         myList = newList
         notifyDataSetChanged()
     }
-
-
-
 
 
 }

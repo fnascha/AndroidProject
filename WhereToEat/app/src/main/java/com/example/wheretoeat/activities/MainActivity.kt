@@ -7,6 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.wheretoeat.R
 import com.example.wheretoeat.databinding.ActivityMainBinding
 import com.example.wheretoeat.fragments.*
@@ -18,6 +20,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,3 +82,4 @@ class MainActivity : AppCompatActivity() {
         }
 
 }
+
