@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.row_layout.view.*
 import com.example.wheretoeat.model.Restaurants
 import com.bumptech.glide.Glide
 
-class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class  MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private var myList = emptyList<Restaurants>()
 
@@ -40,12 +40,12 @@ class MyAdapter:  RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         //Log.d("adapt","resName:$myList[position].nameRes")
-            holder.RestaurantsName.text = myList[position].nameRes
+            holder.RestaurantsName.text = myList[position].name
             holder.CityName.text = myList[position].city
         //Log.d("adapt","addressRes:$myList[position].addressRes")
-            holder.RestaurantAddress.text = myList[position].addressRes
+            holder.RestaurantAddress.text = myList[position].address
         //Log.d("adapt","phoneRes:$myList[position].phoneRes")
-            holder.RestaurantPhone.text = myList[position].phoneRes
+            holder.RestaurantPhone.text = myList[position].phone
 
         Glide.with(holder.itemView.context)
                 .load(myList[position].image_url.toString())

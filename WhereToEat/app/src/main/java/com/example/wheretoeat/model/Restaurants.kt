@@ -3,24 +3,24 @@ package com.example.wheretoeat.model
 
 
 data class ApiResponse (
-        val total_entries: Int,
-        val per_page: Int,
-        val current_page: Int,
-        val restaurants: List<Restaurants>
+    val total_entries: Int,
+    val page: Int,
+    val per_page: Int,
+    val restaurants: List<Restaurants>
 )
 
 
 
 class Restaurants(
     val id: Int,
-    val nameRes: String,
-    val addressRes: String,
+    val name: String,
+    val address: String,
     val city: String,
     val state: String,
     val area: String,
     val postal_code: Int,
     val country: String,
-    val phoneRes: String,
+    val phone: String,
     val lat: Double,
     val lng: Double,
     val price: Int,
